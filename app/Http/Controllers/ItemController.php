@@ -13,4 +13,14 @@ class ItemController extends Controller
             "items" => $items
         ], 200);
     }
+
+    public function getItemById(Request $request){
+        $id = $request->id;
+        $item = Item::find($id);
+       
+        return response()->json([
+            "success" => true,
+            "item" => $item
+        ], 200);
+    }
 }

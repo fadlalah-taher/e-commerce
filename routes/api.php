@@ -18,6 +18,7 @@ use App\Http\Controllers\ItemController;
         });
    // });
    Route::get('/allitems', [ItemController::class, 'getItems']);
+   Route::post('/item', [ItemController::class, 'getItemById']);
 //});
 
 

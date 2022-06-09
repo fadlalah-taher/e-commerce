@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\ItemController;
 
 
 //Route::group(['prefix' => 'v1'], function(){
@@ -16,6 +17,7 @@ use App\Http\Controllers\UserController;
             Route::post('/profile', [UserController::class, 'profile']);
         });
    // });
+   Route::get('/allitems', [ItemController::class, 'getItems']);
 //});
 
 

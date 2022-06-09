@@ -8,11 +8,16 @@ use Validator;
 use Illuminate\Support\Facades\Route;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Contracts\Auth\UserProvider;
 use Illuminate\Support\Facades\Hash;
 //use Illuminate\Support\Facades\Validator;
 
 class UserController extends Controller
 {
+
+    public function sayHi(){
+        echo 'hi';
+    }
     /**
      * Create a new AuthController instance.
      *
@@ -22,6 +27,7 @@ class UserController extends Controller
     {
         $this->middleware('auth:api', ['except' => ['login', 'register']]);
     }
+    
 
     /**
      * Register user.
@@ -34,7 +40,7 @@ class UserController extends Controller
             'fullname' => 'required|string|min:2|max:100',
             'email' => 'required|string|email|max:100|unique:users',
             'password' => 'required|string|confirmed|min:6',
-            'type' => 0,
+            'type' => 'required',
         ]);
 
         if($validator->fails()) {
@@ -42,9 +48,10 @@ class UserController extends Controller
         }
 
         $user = User::create([
-                'name' => $request->name,
+                'fullname' => $request->fullname,
                 'email' => $request->email,
-                'password' => Hash::make($request->password)
+                'password' => Hash::make($request->password),
+                'type' => 0
             ]);
 
         return response()->json([
@@ -52,6 +59,7 @@ class UserController extends Controller
             'user' => $user
         ], 201);
     }
+    
 
     /**
      * login user

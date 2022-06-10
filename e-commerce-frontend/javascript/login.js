@@ -26,6 +26,26 @@ var createBtn = document.getElementById("createBtn");
 var registerForm = document.getElementById("createAcount");
 
 
+createBtn.addEventListener("click", function(){
+
+  let data = new FormData(registerForm);
+  axios({
+      method: 'post',
+      url: 'http://127.0.0.1:8000/api/register',
+      data: data,
+  })
+  .then(function (response) {
+    console.log(response);
+    if(response.data == "mess around"){
+      createdAccount.style.display = "block";
+    }
+    else{
+      console.log(response);
+      //window.location = "file:///C:/xampp/htdocs/Mozato/index.html";
+    }
+  }
+  )
+});
 
 
 // Adding Register Form
@@ -41,7 +61,6 @@ window.onclick = function(event) {
       popup.style.display = "none";
     }
 }
-
 
 
 // hide password login form

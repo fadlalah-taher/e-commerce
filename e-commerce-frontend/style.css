@@ -3,6 +3,7 @@ body{
     padding: 0;
     text-decoration: none;
     box-sizing: border-box;
+    overflow-x: hidden;
 }
 
 /*-------------------- main header section start----------------- */
@@ -213,6 +214,43 @@ body{
   .card-caption i{
     font-size: 50px;
   }
+
+  /*-------------------- Policy section start----------------- */
+
+.policy {
+    width: 100%;
+    margin: auto;
+    margin-bottom: 150px;
+    background-color: #c7ecff;
+    padding: 50px;
+  }
+  .policy .row {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .policy .row .content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .policy .fas {
+    font-size: 30px;
+    margin-bottom: 15px;
+  }
+  .policy h2 {
+    font-size: 23px;
+    line-height: 39px;
+    font-weight: 700;
+    font-family: "Playfair Display", serif;
+    margin-bottom: 10px;
+  }
+  .policy p {
+    font-size: 17px;
+    line-height: 25px;
+  }
+ 
 
 
 

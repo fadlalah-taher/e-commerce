@@ -67,21 +67,8 @@ body{
     cursor: pointer;
   }
   
-  /* .main-header-section .right .sign-btn {
-    padding: 15px;
-    width: 100px;
-    border-radius: 30px;
-    outline: none;
-    box-shadow: none;
-    border: 2px solid #ff003c;
-    background-color: #ff003c;
-    color: #fff;
-    font-size: 15px;
-    font-weight: 400;
-    cursor: pointer;
-  } */
   .loginBtn{
-    background-color: rgb(239, 79, 95);
+    background-color: rgb(239, 67, 85);
     padding: 15px;
     text-align: center;
     text-decoration: none;
@@ -94,9 +81,60 @@ body{
     transition: 0.5s;
 }
 .loginBtn:hover{
-    background-color: rgb(227, 58, 75);
+    background-color: rgb(197, 71, 84);
 }
   .main-header-section .left > .logo{
     width: 80px;    
     border-radius: 50%;
 }
+
+/*-------------------- Hero section start----------------- */
+.hero-section {
+    margin-bottom: 150px;
+    background-color: #c7ecff;
+  }
+  
+  .hero-section .center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 50%;
+  }
+  .hero-section .center p {
+    font-family: Yellowtail, cursive;
+    font-size: 40px;
+    line-height: 60px;
+    color: #2577fd;
+  }
+  .hero-section .center h1 {
+    font-size: 100px;
+    color: #1f2022;
+    line-height: 110px;
+    font-family: "Playfair Display", serif;
+    margin-top: 15px;
+  }
+  .hero-section .center .mute-text {
+    font-family: "Playfair Display", serif;
+    font-size: 20px;
+    color: #313639;
+    line-height: 35px;
+    font-weight: 300;
+  }
+  .hero-section .center .hero-btn {
+    font-size: 18px;
+    color: #fff;
+    background-color: rgb(223, 31, 50);
+    padding: 10px 30px;
+    border-radius: 35px;
+    box-shadow: none;
+    outline: none;
+    cursor: pointer;
+    border: 2px solid rgb(223, 31, 50);
+    margin-top: 30px;
+    margin-bottom: 20px;
+  }
+  .hero-section .center .hero-btn:hover {
+    background-color: rgb(225, 12, 33);
+    border: 2px solid rgb(223, 9, 30);
+  }

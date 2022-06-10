@@ -241,4 +241,10 @@ body{
         width: 20%;
         margin-right: 2%;
     }
+    .latest-product-card{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
 }

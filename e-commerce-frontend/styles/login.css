@@ -78,8 +78,8 @@ form input{
     
 }
 form input:focus{
-    border-color: rgb(239, 79, 95);
-    box-shadow: 0 0 8px rgb(239, 79, 95);
+    border-color: #2577fd;
+    box-shadow: 0 0 8px #2577fd;
 }
 .input-login .input-field {
     width: 100%;
@@ -88,7 +88,7 @@ form input:focus{
 }
 .input-icons i {
     position: absolute;
-    color: rgb(239, 79, 95);
+    color: #2577fd;
 }
  
 .input-icons {
@@ -104,7 +104,7 @@ form input:focus{
     width: 100%;
 }
 .loginBtn{
-    background-color: rgb(239, 79, 95);
+    background-color: #2577fd;
     padding: 15px;
     text-align: center;
     text-decoration: none;
@@ -117,7 +117,7 @@ form input:focus{
     transition: 0.5s;
 }
 .loginBtn:hover{
-    background-color: rgb(227, 58, 75);
+    background-color: #043c96;/*rgb(227, 58, 75);*/
 }
 .forget{
     margin: 15px 0;
@@ -134,7 +134,7 @@ form input:focus{
     display: none;
 }
 .signBtn{
-    background-color: rgb(96, 96, 227);
+    background-color: rgb(230, 83, 98);
     padding: 15px;
     text-align: center;
     text-decoration: none;
@@ -146,7 +146,7 @@ form input:focus{
     transition: 0.5s;
 }
 .signBtn:hover{
-    background-color: rgb(0, 53, 128);
+    background-color: rgb(238, 39, 59);
 }
 .signup{
     padding-top: 20px;

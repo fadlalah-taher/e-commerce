@@ -213,3 +213,32 @@ body{
   .card-caption i{
     font-size: 50px;
   }
+
+
+
+  /* Media Query*/
+  @media (max-width: 969px) {
+
+    /*-------------------- top header section----------------- */
+    
+    /*-------------------- top header section end----------------- */
+  
+    /*-------------------- main header section start----------------- */
+    .main-header-section .center {
+      width: 50%;
+      gap:10px;
+    }
+    .main-header-section .right {
+      display: flex;
+      width: 20%;
+    }
+    
+    .main-header-section .center a:hover {
+      color: #ff003c;
+    }
+    .loginBtn{
+        padding: 15px;
+        width: 20%;
+        margin-right: 2%;
+    }
+}

@@ -321,6 +321,13 @@ body{
     padding: 15px;
     border: 2px solid #c7c5c5;
   }
+  .copy-right .right .fab:hover {
+    color: rgb(239, 67, 85);
+    border: 2px solid rgb(239, 67, 85);
+  }
+  #home-active{
+    color: #ff003c;
+  }
 
 
 

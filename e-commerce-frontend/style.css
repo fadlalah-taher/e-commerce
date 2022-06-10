@@ -140,3 +140,76 @@ body{
     background-color: rgb(225, 12, 33);
     border: 2px solid rgb(223, 9, 30);
   }
+
+  /*-------------------- Latest Product section start----------------- */
+.latest-product {
+    width: 90%;
+    margin: auto;
+    margin-bottom: 150px;
+  }
+  .latest-product .latest-product-top {
+    display: flex;
+    align-items: center;
+    padding-bottom: 25px;
+    justify-content: space-between;
+    border-bottom: 1px solid #e8e8e8;
+  }
+  .latest-product .left {
+    padding: 10px;
+    flex: 70%;
+  }
+  .latest-product .left h1 {
+    font-size: 40px;
+    line-height: 24px;
+  }
+  .latest-product .right {
+    padding: 10px;
+    flex: 30%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
+  .latest-product .right p {
+    cursor: pointer;
+  }
+  .latest-product .right p:hover {
+    color: #ff003c;
+  }
+  .latest-product .latest-product-card {
+    margin-top: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .latest-product .latest-product-card .column {
+    flex: 30%;
+    max-width: 30%;
+    margin: 15px 0px;
+  }
+  .card img {
+    width: 100%;
+    border-radius: 10px;
+  }
+  .card {
+    transition: 0.3s;
+    border-radius: 10px 10px 0px 0px;
+    width: 100%;
+  }
+  .card-caption {
+    text-align: center;
+    padding: 15px 16px;
+  }
+  .card-caption .fa-star,
+  .fa-star-half-alt {
+    margin: 15px 0px;
+    color: #f7d800;
+  }
+  .card-caption h4 {
+    margin-bottom: 15px;
+  }
+  i .fa-solid .fa-heart{
+    font-size: 50px;
+  }
+  .card-caption i{
+    font-size: 50px;
+  }

@@ -21,6 +21,26 @@ var registerSection = document.getElementById("register-section");
 var invalidEmail = document.getElementById("invalidEmail");
 var createdAccount = document.getElementById("createdAccount");
 
+
+loginBtn.addEventListener("click", function(){
+    let data = new FormData();
+    data.append('email', emailInput.value);
+    data.append('password', loginInputPassword.value);
+    axios({
+        method: 'post',
+        url: 'http://127.0.0.1:8000/api/login',
+        data: data,
+    })
+    .then(function (response) {
+        console.log(response.data);
+        console.log(response.data.access_token);
+        window.location = "file:///C:/Users/Fadel/e-commerce/e-commerce-backend/e-commerce-frontend/index.html";
+      }
+    ) 
+  });
+
+
+
 /* register */
 var createBtn = document.getElementById("createBtn");
 var registerForm = document.getElementById("createAcount");
@@ -35,13 +55,12 @@ createBtn.addEventListener("click", function(){
       data: data,
   })
   .then(function (response) {
-    console.log(response);
     if(response.data == "mess around"){
       createdAccount.style.display = "block";
     }
     else{
       console.log(response);
-      //window.location = "file:///C:/xampp/htdocs/Mozato/index.html";
+      window.location = "file:///C:/Users/Fadel/e-commerce/e-commerce-backend/e-commerce-frontend/login.html#";
     }
   }
   )

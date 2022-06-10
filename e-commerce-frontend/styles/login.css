@@ -195,3 +195,48 @@ form input:focus{
     margin-bottom: 5%;
 
 }
+
+
+/* Media Query */
+
+@media only screen and (max-width: 1300px){
+    .inputContainer i{
+        margin-left: -20px;
+    }
+}
+
+@media only screen and (max-width: 900px){
+    section .header-container{
+        flex-direction: column;
+    }
+    .left-container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .inputContainer i{
+        margin-left: -30px;
+    }
+}
+
+
+/* Media Query phones*/
+@media (max-width: 500px){
+    
+}
+@media (max-width: 450px){
+    form{
+        width: 280px;
+        margin-top: 25px;
+    }
+    section .header-container{
+        flex-direction: column;
+    }
+    .left-container > h1{
+        font-size: 10px;
+    }
+    .inputContainer i{
+        margin-left: -30px;
+    }
+}

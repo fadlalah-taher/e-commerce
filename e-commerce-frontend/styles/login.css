@@ -196,6 +196,14 @@ form input:focus{
 
 }
 
+header > a i{
+    position: absolute;
+    margin-top: 2%;
+    margin-left: 2%;
+    font-size: 35px;
+    color: rgb(230, 83, 98);
+}
+
 
 /* Media Query */
 

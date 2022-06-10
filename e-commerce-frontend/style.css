@@ -294,6 +294,33 @@ body{
     padding-left: 10px;
     color: #ff003c;
   }
+
+  /*-------------------- copy right section  start------------------------*/
+  .copy-right {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 80px;
+  }
+  .copy-right .left {
+    display: flex;
+    align-items: center;
+    width: 70%;
+  }
+  .copy-right .right {
+    width: 30%;
+    text-align: right;
+  }
+  .copy-right .right .fab {
+    margin: 0px 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    color: #313639;
+    padding: 15px;
+    border: 2px solid #c7c5c5;
+  }
   
  
 
@@ -335,6 +362,19 @@ body{
     .policy .row {
         flex-direction: column;
         gap:20px;
+      }
+
+    /* footer section */
+    .footer-section .row {
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    .copy-right {
+        flex-direction: column;
+    }
+    .copy-right .right .fab {
+        margin-top: 10px;
       }
    
 }

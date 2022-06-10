@@ -22,3 +22,19 @@ var createdAccount = document.getElementById("createdAccount");
 /* register */
 var createBtn = document.getElementById("createBtn");
 var registerForm = document.getElementById("createAcount");
+
+
+// hide password login form
+passwordLoginIcon.addEventListener("click", function(){
+    if(loginInputPassword.type === 'password'){
+        loginInputPassword.type = "text";
+        hide1.style.display = "block";
+        hide2.style.display = "none";
+      }
+      else{
+        loginInputPassword.type = "password";
+        hide1.style.display = "none";
+        hide2.style.display = "block";
+  
+      }
+  });

@@ -15,9 +15,6 @@ use Illuminate\Support\Facades\Hash;
 class UserController extends Controller
 {
 
-    public function sayHi(){
-        echo 'UserController';
-    }
     /**
      * Create a new AuthController instance.
      *

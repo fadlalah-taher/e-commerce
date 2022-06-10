@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ItemController;
 
-Route::get('/hi', [UserController::class, 'sayHi']);//->name('say-Hi');
+
 Route::get('/hii', [ItemController::class, 'sayHii']);
 //Route::group(['prefix' => 'v1'], function(){
     //Route::group(['prefix' => 'user'], function(){
@@ -14,6 +14,7 @@ Route::get('/hii', [ItemController::class, 'sayHii']);
             Route::post('/register', [UserController::class, 'register'])->name('register');
             Route::post('/login', [UserController::class, 'login'])->name('login');
             Route::post('/logout', [UserController::class, 'logout'])->name('logout');
+            //Route::get('/hi', [UserController::class, 'sayHi']);//->name('say-Hi');
             Route::post('/refresh', [UserController::class, 'refresh'])->name('refresh');
             Route::post('/profile', [UserController::class, 'profile'])->name('profile');
         });

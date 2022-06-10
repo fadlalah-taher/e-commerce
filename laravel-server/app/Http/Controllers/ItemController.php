@@ -7,6 +7,10 @@ use App\Models\Item;
 
 class ItemController extends Controller
 {
+    public function sayHii(){
+        echo 'ItemController';
+    }
+
     public function getItems(){
         $items = Item::all();
         return response()->json([
@@ -39,4 +43,5 @@ class ItemController extends Controller
             "message" => $item
         ], 200);
     }
+    
 }

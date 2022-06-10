@@ -16,7 +16,7 @@ class UserController extends Controller
 {
 
     public function sayHi(){
-        echo 'hi';
+        echo 'UserController';
     }
     /**
      * Create a new AuthController instance.

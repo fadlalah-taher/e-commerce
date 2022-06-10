@@ -2,10 +2,12 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ItemController;
 
-//Route::get('/hi', [UserController::class, 'sayHi']);
+Route::get('/hi', [UserController::class, 'sayHi']);//->name('say-Hi');
+Route::get('/hii', [ItemController::class, 'sayHii']);
 //Route::group(['prefix' => 'v1'], function(){
     //Route::group(['prefix' => 'user'], function(){
         Route::group(['middleware' => 'api'], function($router) {

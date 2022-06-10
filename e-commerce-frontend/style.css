@@ -216,9 +216,11 @@ body{
   }
 
   /*-------------------- Policy section start----------------- */
-
+#policy{
+    background-color: #c7ecff;
+}
 .policy {
-    width: 100%;
+    width: 80%;
     margin: auto;
     margin-bottom: 150px;
     background-color: #c7ecff;
@@ -285,4 +287,11 @@ body{
         justify-content: center;
         align-items: center;
     }
+
+    /* Policy section*/
+    .policy .row {
+        flex-direction: column;
+        gap:20px;
+      }
+   
 }

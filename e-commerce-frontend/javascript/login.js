@@ -26,6 +26,24 @@ var createBtn = document.getElementById("createBtn");
 var registerForm = document.getElementById("createAcount");
 
 
+
+
+// Adding Register Form
+
+signBtn.addEventListener("click", function(){
+    popup.style.display = "flex";
+    console.log("Hello flex");
+});
+
+window.onclick = function(event) {
+  console.log(event.target);
+    if (event.target == registerSection) {
+      popup.style.display = "none";
+    }
+}
+
+
+
 // hide password login form
 passwordLoginIcon.addEventListener("click", function(){
     if(loginInputPassword.type === 'password'){

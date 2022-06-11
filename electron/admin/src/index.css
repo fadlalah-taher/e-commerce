@@ -86,3 +86,66 @@ form input:focus{
   border-color: #2577fd;
   box-shadow: 0 0 8px #2577fd;
 }
+#header{
+  color: rgb(63, 61, 61);
+  width: 100%;
+  font-size: 30px;
+  font-weight: 500;
+  margin-top: -4%;
+  margin-bottom: 5%;
+
+}
+.input-login .input-field {
+  width: 100%;
+  padding: 10px;
+  padding-left: 50px;
+}
+.input-icons i {
+  position: absolute;
+  color: #2577fd;
+}
+
+.input-icons {
+  width: 100%;
+  margin-bottom: 10px;
+}
+#hide1 {
+  display: none;
+}
+.icon {
+  padding: 10px;
+  min-width: 40px;
+}
+.inputContainer .icon{
+  margin-left: -40px;
+}
+.input-login{
+  width: 100%;
+}
+.loginBtn{
+  background-color: #2577fd;
+  padding: 15px;
+  text-align: center;
+  text-decoration: none;
+  width: 60%;
+  border-radius: 5px;
+  color: white;
+  font-size: 20px;
+  font-family: 'Arial';
+  font-weight: 700;
+  transition: 0.5s;
+}
+.loginBtn:hover{
+  background-color: #043c96;/*rgb(227, 58, 75);*/
+}
+.forget{
+  margin: 15px 0;
+  text-decoration: none;
+  color: rgb(239, 79, 95);
+  font-family: 'Arial';
+  font-size: 14px;
+}
+#invalidEmail{
+  margin-top: -3%;
+  display: none;
+}

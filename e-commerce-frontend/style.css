@@ -86,9 +86,9 @@ body{
 .loginBtn:hover{
     background-color: rgb(197, 71, 84);
 }
-  .main-header-section .left > .logo{
-    width: 80px;    
-    border-radius: 50%;
+.main-header-section .left > .logo{
+  width: 80px;    
+  border-radius: 50%;
 }
 
 /*-------------------- Hero section start----------------- */

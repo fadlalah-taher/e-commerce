@@ -6,8 +6,8 @@ var loginBtn = document.getElementById("loginBtn");
 // hide password icons
 var hide1 = document.getElementById("hide1");
 var hide2 = document.getElementById("hide2");
-var hide1 = document.getElementById("hide3");
-var hide2 = document.getElementById("hide4");
+var hide3 = document.getElementById("hide3");
+var hide4 = document.getElementById("hide4");
 var passwordLoginIcon = document.getElementById("password-icon");
 var passwordRegisterIcon = document.getElementById("passwordRegister-icon");
 var loginInputPassword = document.getElementById("login-inputPassword");

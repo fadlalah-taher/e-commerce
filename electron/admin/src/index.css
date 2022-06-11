@@ -1,10 +1,4 @@
-/* body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
-    Arial, sans-serif;
-  margin: auto;
-  max-width: 38rem;
-  padding: 2rem;
-} */
+
 *{
   padding: 0%;
   margin: 0%;
@@ -49,6 +43,7 @@ header section .header-container h1{
   letter-spacing: 2px;
   margin-top: 30px;
 }
+
 /* Form Login */
 
 .right-container{
@@ -136,7 +131,7 @@ form input:focus{
   transition: 0.5s;
 }
 .loginBtn:hover{
-  background-color: #043c96;/*rgb(227, 58, 75);*/
+  background-color: #043c96;
 }
 .forget{
   margin: 15px 0;

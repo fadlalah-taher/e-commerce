@@ -330,7 +330,7 @@ body{
     color: #ff003c;
   }
 
-  /* Burger menu */
+/* Burger menu */
 
 #span-icon{
   display: none;
@@ -377,9 +377,6 @@ body{
   right: 45px;
   font-size: 60px;
 }
-
-
-
 
 
   /* Media Query*/

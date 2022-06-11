@@ -19,8 +19,8 @@ class ItemController extends Controller
         ], 200);
     }
 
-    public function getItemById(Request $request){
-        $id = $request->id;
+    public function getItemById($id){//Request $request, 
+        //$id = $request->id;
         $item = Item::find($id);
        
         return response()->json([

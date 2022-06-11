@@ -15,12 +15,26 @@
             <img class="logo" src="../assets/logo.jpg" alt="logo">
         </div>
         <div class="center">
-          <a href="../index.html" >Home</a>
-          <a href="#">Category</a>
-          <a href="../pages/favortes.html">Favortes</a>
-          <a href="#" id="home-active">Contact</a>
+          <a class="menu-item" href="../index.html" >Home</a>
+          <a class="menu-item" href="#">Category</a>
+          <a class="menu-item" href="../pages/favortes.html">Favortes</a>
+          <a class="menu-item" href="#" id="home-active">Contact</a>
         </div>
         <div class="right">
+        </div>
+        <div class="dropdown-wrapper">
+            <span id="span-icon" style="font-size:30px;cursor:pointer">&#9776;</span>
+            <div id="myNav" class="overlay">
+                <img id="logo" src="../e-commerce-frontend/assets/logo.jpg" alt="logo">
+                <a href="javascript:void(0)" class="closebtn">&times;</a>
+                <div class="overlay-content">
+                  <a href="#">Home</a>
+                  <a href="#">Category</a>
+                  <a href="pages/favortes.html">Favortes</a>
+                  <a href="pages/contact.html" id="home-active">Contact</a>  
+                </div>
+            </div>
+            <!-- <button class="menu-button"><i class="fa-solid fa-bars"></i></button>     -->
         </div>
     </div>
 

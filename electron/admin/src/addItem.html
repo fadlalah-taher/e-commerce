@@ -4,9 +4,43 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
     <title>Add Item</title>
 </head>
 <body>
-    <h1>Hello</h1>
+    <header>
+        <section>
+          <div class="header-container">
+            <div class="right-container">
+                <form action="">
+                    <div class="input-icons">
+                        <h1 id="header">Add Item</h1>
+                        <div class="input-login">
+                            <input id="nameInput" type="text" class="input-field" placeholder="Name" required>
+                        </div>
+                        <div class="input-login">
+                            <input type="text" id="descriptionInput" class="input-field" placeholder="Description" required>
+                        </div>
+                        <div class="input-login">
+                            <input type="text" id="priceInput" class="input-field" placeholder="Price" required>
+                        </div>
+                        <select name="pets" class="input-login" id="pet-select">
+                            <option value="">Choose a category</option>
+                            <option value="dog">Dog</option>
+                            <option value="cat">Cat</option>
+                            <option value="hamster">Hamster</option>
+                            <option value="parrot">Parrot</option>
+                            <option value="spider">Spider</option>
+                            <option value="goldfish">Goldfish</option>
+                        </select>
+                   </div>
+                    <a href="#" id="addBtn" class="loginBtn">Add</a>
+                    <div class="signup">
+                    </div>
+                </form>
+            </div>
+          </div>
+        </section>
+      </header>
 </body>
 </html>

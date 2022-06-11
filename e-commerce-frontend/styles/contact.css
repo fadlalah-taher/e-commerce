@@ -1,11 +1,9 @@
-
-
-/*General */
 html{    
-    /* background:url('images/sun-2297961_1920.jpg') no-repeat; */
-    background-color: #0493bd;
+    /* background:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNjDWXXzPPexNahp2I6rGJ-3MsvgqD99bpeg&usqp=CAU') no-repeat; */
+    background-color: #c7ecff;
     background-size: cover;
     height:100%;
+    
     
 }
 body{
@@ -35,7 +33,6 @@ text-align:center;
     margin-top:30px;
     margin-left: -260px;
     border-radius: 7px;
-
 }
 
 .montform .feedback-input {
@@ -98,9 +95,9 @@ background-position: 11px 8px;
 }
 
 .montform  #email:focus{
-    background-image: url(https://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/svgs/fi-mail.svg);
+    background-image: url(https://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/svgs/fi-mail.svg) ;
     background-size: 30px 30px;
-background-position: 11px 8px;
+    background-position: 11px 8px;
     background-repeat: no-repeat;
 }
 
@@ -117,7 +114,8 @@ background-position: 11px 8px;
     width: 100%;
     border: #fbfbfb solid 4px;
     cursor:pointer;
-    background-color: #3498db;
+    /* background-color: #3498db; */
+    background-color: #3498db; 
     color:white;
     font-size:24px;
     padding-top:22px;
@@ -125,11 +123,13 @@ background-position: 11px 8px;
     transition: all 0.3s;
     margin-top:-4px;
     font-weight:700;
+    border-radius: 5px;
 }
 
 .button-blue:hover{
     background-color: rgba(0,0,0,0);
-    color: #0493bd;
+    background-color: rgb(239, 67, 85);
+    
 }
     
 .montform  .submit:hover {

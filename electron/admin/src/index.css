@@ -1,7 +1,51 @@
-body {
+/* body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
     Arial, sans-serif;
   margin: auto;
   max-width: 38rem;
   padding: 2rem;
+} */
+*{
+  padding: 0%;
+  margin: 0%;
+  box-sizing: border-box;
+}
+body{
+  font-family: sans-serif;
+}
+header{
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #c7ecff;
+}
+header section{
+  position: relative;
+  width: 80%;
+  height: 90%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+section .header-container{
+  width: 80%;
+  height: 97.5%;
+  display: flex; 
+  align-items: center;
+  justify-content: space-around;
+}
+header section .header-container p{
+  color: white;
+  font-size: 30px;
+  font-weight: 500px;
+  letter-spacing: 2px;
+  margin-top: 30px;
+}
+header section .header-container h1{
+  color: white;
+  font-size: 65px;
+  font-weight: 800px;
+  letter-spacing: 2px;
+  margin-top: 30px;
 }

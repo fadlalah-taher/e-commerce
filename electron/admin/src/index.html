@@ -6,7 +6,35 @@
     <link rel="stylesheet" href="index.css" />
   </head>
   <body>
-    <h1>💖 Hello World!</h1>
-    <p>Welcome to your Electron application.</p>
+    <header>
+      <section>
+        <div class="header-container">
+          <div class="right-container">
+              <form action="">
+                  <div class="input-icons">
+                      <h1 id="header">Log in</h1>
+                      <div class="input-login">
+                          <i class="far fa-envelope icon"></i>
+                          <input id="emailInput" type="text" class="input-field" placeholder="Email address " required>
+                      </div>
+                      <div class="input-login">
+                          <i class="fas fa-key icon"></i>
+                          <input type="password" id="login-inputPassword" class="input-field" placeholder="Password" required>
+                          <span class="inputContainer" id="password-icon">
+                              <i id="hide1" class="far fa-eye icon"></i>
+                              <i id="hide2" class="far fa-eye-slash icon"></i>
+                          </span>
+                      </div>
+                 </div>
+                 <a href="" id="invalidEmail" class="forget">Invalid email or password!</a>
+                  <a href="addItem.html" id="loginBtn" class="loginBtn">Log In</a>
+                  <a href="" class="forget">Forgotten password?</a>
+                  <div class="signup">
+                  </div>
+              </form>
+          </div>
+      </div>
+      </section>
+    </header>
   </body>
 </html>

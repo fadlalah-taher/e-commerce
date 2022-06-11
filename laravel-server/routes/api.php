@@ -14,7 +14,6 @@ Route::get('/hii', [ItemController::class, 'sayHii']);
             Route::post('/register', [UserController::class, 'register'])->name('register');
             Route::post('/login', [UserController::class, 'login'])->name('login');
             Route::post('/logout', [UserController::class, 'logout'])->name('logout');
-            //Route::get('/hi', [UserController::class, 'sayHi']);//->name('say-Hi');
             Route::post('/refresh', [UserController::class, 'refresh'])->name('refresh');
             Route::post('/profile', [UserController::class, 'profile'])->name('profile');
         });

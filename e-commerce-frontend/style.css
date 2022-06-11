@@ -412,7 +412,7 @@ body{
   display: block;
   color: rgb(14, 13, 13);
   margin-top: 50%;
-  margin-left: 0%;
+  margin-left: -50%;
 }
 .dropdown-wrapper:hover .dropdown{
   display: none;

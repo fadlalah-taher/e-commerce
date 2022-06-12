@@ -42,7 +42,7 @@ window.addEventListener('DOMContentLoaded', () => {
                 data.append('name', nameInput.value);
                 data.append('description', descriptionInput.value);
                 data.append('price', priceInput.value);
-                data.append('image', base64String);//"data:image/png;base64," + 
+                data.append('image', "data:image/png;base64," + base64String);
                 data.append('category_id', catSelect.value);
                 //let data = new FormData(addItemForm);
                 axios({

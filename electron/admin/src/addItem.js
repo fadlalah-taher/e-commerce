@@ -11,6 +11,7 @@ window.addEventListener('DOMContentLoaded', () => {
     var catSelect = document.getElementById("cat-select");
     var logoutBtn = document.getElementById("logout");
 
+    // Logout
     logoutBtn.addEventListener("click", function(){
         axios({
             method: 'post',
@@ -22,7 +23,6 @@ window.addEventListener('DOMContentLoaded', () => {
           })
           location.reload()
     })
-    // Logout
 
     // Add Item
     addBtn.addEventListener("click", async function(){
@@ -33,9 +33,8 @@ window.addEventListener('DOMContentLoaded', () => {
             var base64String = "";
             const selectedFile = imageInput.files[0];
             var reader = new FileReader();
-            console.log("hi");
-            //reader.onload = function(){
-                console.log("retetet");
+        
+            reader.onload = function(){
                 base64String = reader.result.replace("data:", "").replace(/^.+,/, "");
                 imageBase64Stringsep = base64String;
 
@@ -60,9 +59,9 @@ window.addEventListener('DOMContentLoaded', () => {
                     console.log(response.data);
                     //window.location = "file:///C:/Users/Fadel/e-commerce/e-commerce-backend/e-commerce-frontend/login.html#";
                     }
-                }
-                )
-            //}
+                })
+            }
+            reader.readAsDataURL(selectedFile);
         }
        
     });

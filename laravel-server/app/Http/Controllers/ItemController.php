@@ -52,5 +52,14 @@ class ItemController extends Controller
             "items" => $categories
         ], 200);
     }
+
+    // public function getitemsbycat(){
+    //     //$items = Item::table('Categories')->where('id',1);
+    //     $items = Category::table('categories')->where('id', '1')->first();
+    //     return response()->json([
+    //         "success" => true,
+    //         "items" => $items
+    //     ], 200);
+    // }
     
 }

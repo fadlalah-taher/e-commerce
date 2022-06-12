@@ -1,7 +1,6 @@
 // buttons
 var signBtn = document.getElementById("signBtn");
 var loginBtn = document.getElementById("loginBtn");
-//var logoutBtn = document.getElementById("logoutBtn");
 
 var invalidPE = document.getElementById("invalidEmail");
 // hide password icons
@@ -15,6 +14,10 @@ var loginInputPassword = document.getElementById("login-inputPassword");
 var registerInputPassword = document.getElementById("inputPassword-register");
 var popup = document.querySelector(".popup");
 
+/* register */
+var createBtn = document.getElementById("createBtn");
+var registerForm = document.getElementById("createAcount");
+
 
 // email and register popup message
 var emailInput = document.getElementById("emailInput");
@@ -24,6 +27,10 @@ var createdAccount = document.getElementById("createdAccount");
 
 
 loginBtn.addEventListener("click", function(){
+  if(emailInput.value == "" || loginInputPassword.value == ""){
+    invalidPE.style.display = "block";
+  }
+  else{
     let data = new FormData();
     data.append('email', emailInput.value);
     data.append('password', loginInputPassword.value);
@@ -33,7 +40,7 @@ loginBtn.addEventListener("click", function(){
         data: data,
     })
     .then(function (response) {
-       var token = response.data["access_token"];
+        var token = response.data["access_token"];
       localStorage.setItem("access_token", token);
       axios({
       method: 'post',
@@ -55,63 +62,61 @@ loginBtn.addEventListener("click", function(){
       }
     })
       //window.localStorage.setItem("user_id", response.data.id);
-    }
-    ) 
-  })
+    }).catch(function(response){
+      invalidPE.style.display = "block";
+    })
+  }
+})
 
-/* register */
-var createBtn = document.getElementById("createBtn");
-var registerForm = document.getElementById("createAcount");
 
 createBtn.addEventListener("click", function(){
 
-  let data = new FormData(registerForm);
-  axios({
-      method: 'post',
-      url: 'http://127.0.0.1:8000/api/v1/user/register',
-      data: data,
-  })
-  .then(function (response) {
-    if(response.data == "mess around"){
-      createdAccount.style.display = "block";
-    }
-    else{
-      console.log(response);
-      window.location = "file:///C:/Users/Fadel/e-commerce/e-commerce-backend/e-commerce-frontend/login.html#";
-    }
+let data = new FormData(registerForm);
+axios({
+    method: 'post',
+    url: 'http://127.0.0.1:8000/api/v1/user/register',
+    data: data,
+})
+.then(function (response) {
+  if(response.data == "mess around"){
+    createdAccount.style.display = "block";
   }
-  )
+  else{
+    console.log(response);
+    window.location = "file:///C:/Users/Fadel/e-commerce/e-commerce-backend/e-commerce-frontend/login.html";
+  }
+})
 });
 
 
 // Adding Register Form
 
 signBtn.addEventListener("click", function(){
-    popup.style.display = "flex";
+  popup.style.display = "flex";
 });
 
 window.onclick = function(event) {
-  console.log(event.target);
-    if (event.target == registerSection) {
-      popup.style.display = "none";
-    }
+console.log(event.target);
+  if (event.target == registerSection) {
+    popup.style.display = "none";
+  }
 }
 
 
 // hide password login form
 passwordLoginIcon.addEventListener("click", function(){
-    if(loginInputPassword.type === 'password'){
-        loginInputPassword.type = "text";
-        hide1.style.display = "block";
-        hide2.style.display = "none";
-      }
-      else{
-        loginInputPassword.type = "password";
-        hide1.style.display = "none";
-        hide2.style.display = "block";
-  
-      }
-  });
+  if(loginInputPassword.type === 'password'){
+      loginInputPassword.type = "text";
+      hide1.style.display = "block";
+      hide2.style.display = "none";
+    }
+    else{
+      loginInputPassword.type = "password";
+      hide1.style.display = "none";
+      hide2.style.display = "block";
+
+    }
+});
 
 
   // hide password Register form

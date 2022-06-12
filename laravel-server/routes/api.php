@@ -17,7 +17,6 @@ Route::group(['prefix' => 'v1'], function(){
             Route::post('/logout', [UserController::class, 'logout'])->name('logout');
             Route::post('/refresh', [UserController::class, 'refresh'])->name('refresh');
             Route::post('/profile', [UserController::class, 'profile'])->name('profile');
-            //Route::get('/getId', [UserController::class, 'getId'])->name('get-Id');
         });
     });
 
@@ -33,6 +32,7 @@ Route::group(['prefix' => 'v1'], function(){
 
     Route::group(['prefix' => 'category'], function(){
         Route::get('/getCategories', [ItemController::class, 'getCategories']);
+        // Route::get('/getitemsbycat', [ItemController::class, 'getitemsbycat']);
     });
    
 });

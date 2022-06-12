@@ -32,9 +32,29 @@ loginBtn.addEventListener("click", function(){
         data: data,
     })
     .then(function (response) {
-      console.log(response.data);
-      console.log(response.data.access_token);
-      window.location = "file:///C:/Users/Fadel/e-commerce/e-commerce-backend/e-commerce-frontend/index.html";
+        var token = response.data["access_token"];
+          axios({
+          method: 'post',
+          url: 'http://127.0.0.1:8000/api/v1/user/profile',
+          headers: {
+            'Authorization': `Bearer ${token}`,
+            'Accept':'application/json'
+          },
+        }).then(function(response){
+          user_id = response.data["id"]
+          console.log(user_type);
+          if(user_id){
+            localStorage.setItem('token', token)
+            window.location = "file:///C:/Users/Fadel/e-commerce/e-commerce-backend/e-commerce-frontend/index.html";
+          }
+          else{
+            alert("there is no id !")
+          }
+        })
+      // console.log(response.data);
+      // console.log(response.data.access_token);
+      //window.localStorage.setItem("user_id", response.data.id);
+      //window.location = "file:///C:/Users/Fadel/e-commerce/e-commerce-backend/e-commerce-frontend/index.html";
     }
     ) 
   });

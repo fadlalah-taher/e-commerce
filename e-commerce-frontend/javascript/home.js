@@ -3,6 +3,7 @@ var myNav = document.getElementById("myNav");
 var icon = document.getElementById("span-icon");
 var itemContainer = document.getElementById("item-container");
 var logoutBtn = document.getElementById("logoutBtn");
+var loginBtn = document.getElementById("loginBtn");
 
 icon.addEventListener("click", function(){
     myNav.style.width = "100%";
@@ -15,12 +16,17 @@ myNav.addEventListener("click", function(){
 window.onload = (function(){
     var id_logged = localStorage.getItem("token");
     console.log(id_logged);
+    if(id_logged == ""){
+        console.log("true not logged in");
+    }else{
+        logoutBtn.style.display = "block";
+        loginBtn.style.display = "none";
+    }
     axios({
         method: 'get',
         url: 'http://127.0.0.1:8000/api/v1/item/allitems',
     })
     .then(function (response) {
-        console.log(response);
         let items = response.data['items'];
         console.log(items);
         itemContainer.innerHTML = ""; 
@@ -28,7 +34,7 @@ window.onload = (function(){
             let userHtml = `
             <div class="column">
             <div class="card">
-              <img src="assets/whiteshirt.jpeg" alt="" />
+              <img src="${item.image}" alt="" />
               <div class="card-caption">
                 <h4><b>${item.name}</b></h4>
                 <p>
@@ -37,7 +43,7 @@ window.onload = (function(){
                 <p>
                 ${item.price}
                 </p>
-                <i class="fa-solid fa-heart"></i>
+                <a><i class="fa-solid fa-heart"></i></a>
               </div>
             </div>
           </div>`;
@@ -54,9 +60,15 @@ window.onload = (function(){
         method: 'post',
         url: 'http://127.0.0.1:8000/api/v1/user/logout',
         headers: {
-          'Authorization': `Bearer ${token}`,
+          'Authorization': `Bearer ${localStorage.getItem('access_token')}`,
           'Accept':'application/json'
         },
       })
-      window.location = "file:///C:/Users/Fadel/e-commerce/e-commerce-backend/e-commerce-frontend/index.html";
+      .then(function(response){
+        console.log("logout");
+        localStorage.setItem('access_token',null);
+        loginBtn.style.display = "block";
+        logoutBtn.style.display = "none";
+      })
+      //window.location = "file:///C:/Users/Fadel/e-commerce/e-commerce-backend/e-commerce-frontend/index.html";
 })

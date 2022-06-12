@@ -42,7 +42,7 @@ window.addEventListener('DOMContentLoaded', () => {
                 data.append('name', nameInput.value);
                 data.append('description', descriptionInput.value);
                 data.append('price', priceInput.value);
-                data.append('image', "data:image/png;base64," + base64String);
+                data.append('image', base64String);//"data:image/png;base64," + 
                 data.append('category_id', catSelect.value);
                 //let data = new FormData(addItemForm);
                 axios({
@@ -56,7 +56,7 @@ window.addEventListener('DOMContentLoaded', () => {
                     }
                     else{
                     console.log(response);
-                    console.log(response.data);
+                    location.reload();
                     //window.location = "file:///C:/Users/Fadel/e-commerce/e-commerce-backend/e-commerce-frontend/login.html#";
                     }
                 })

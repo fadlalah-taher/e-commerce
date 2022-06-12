@@ -33,7 +33,9 @@ loginBtn.addEventListener("click", function(){
         data: data,
     })
     .then(function (response) {
+
         var token = response.data["access_token"];
+        localStorage.setItem("access_token", token);
           axios({
           method: 'post',
           url: 'http://127.0.0.1:8000/api/v1/user/profile',
@@ -41,7 +43,8 @@ loginBtn.addEventListener("click", function(){
             'Authorization': `Bearer ${token}`,
             'Accept':'application/json'
           },
-        }).then(function(response){
+        })
+        .then(function(response){
           user_id = response.data["id"]
           console.log(user_id);
           if(user_id){

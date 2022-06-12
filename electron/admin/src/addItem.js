@@ -12,7 +12,7 @@ window.addEventListener('DOMContentLoaded', () => {
         let data = new FormData(addItemForm);
         axios({
             method: 'post',
-            url: 'http://127.0.0.1:8000/api/additem',
+            url: 'http://127.0.0.1:8000/api/v1/item/additem',
             data: data,
         })
         .then(function (response) {

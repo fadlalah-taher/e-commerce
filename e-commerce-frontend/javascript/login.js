@@ -1,7 +1,7 @@
 // buttons
 var signBtn = document.getElementById("signBtn");
 var loginBtn = document.getElementById("loginBtn");
-
+//var logoutBtn = document.getElementById("logoutBtn");
 
 // hide password icons
 var hide1 = document.getElementById("hide1");
@@ -28,14 +28,14 @@ loginBtn.addEventListener("click", function(){
     data.append('password', loginInputPassword.value);
     axios({
         method: 'post',
-        url: 'http://127.0.0.1:8000/api/login',
+        url: 'http://127.0.0.1:8000/api/v1/user/login',
         data: data,
     })
     .then(function (response) {
-        console.log(response.data);
-        console.log(response.data.access_token);
-        window.location = "file:///C:/Users/Fadel/e-commerce/e-commerce-backend/e-commerce-frontend/index.html";
-      }
+      console.log(response.data);
+      console.log(response.data.access_token);
+      window.location = "file:///C:/Users/Fadel/e-commerce/e-commerce-backend/e-commerce-frontend/index.html";
+    }
     ) 
   });
 
@@ -51,7 +51,7 @@ createBtn.addEventListener("click", function(){
   let data = new FormData(registerForm);
   axios({
       method: 'post',
-      url: 'http://127.0.0.1:8000/api/register',
+      url: 'http://127.0.0.1:8000/api/v1/user/register',
       data: data,
   })
   .then(function (response) {

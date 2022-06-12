@@ -378,6 +378,11 @@ body{
   font-size: 60px;
 }
 
+/* logout */
+#logoutBtn{
+  display: none;
+}
+
 
   /* Media Query*/
 @media (max-width: 969px) {

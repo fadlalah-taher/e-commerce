@@ -12,22 +12,48 @@ window.addEventListener('DOMContentLoaded', () => {
 
 
     loginBtn.addEventListener("click", function(){
+      if(emailInput.value == "" || loginInputPassword.value == ""){
+        alert("Fill all Fields");
+      }
+      else{
         let data = new FormData();
         data.append('email', emailInput.value);
         data.append('password', loginInputPassword.value);
         axios({
             method: 'post',
-            url: 'http://127.0.0.1:8000/api/login',
-            headers: {Authorization: `Bearer ${data.token}`},
+            url: 'http://127.0.0.1:8000/api/v1/user/login',
+            //headers: {Authorization: `Bearer ${token}`},
             data: data,
         })
         .then(function (response) {
-            //console.log(response['data']['access_token']);
-            console.log(response.data.access_token);
-            console.log("successfull");
-            window.location = "addItem.html";
+          var token = response.data["access_token"];
+            axios({
+            method: 'post',
+            url: 'http://127.0.0.1:8000/api/v1/user/profile',
+            headers: {
+              'Authorization': `Bearer ${token}`,
+              'Accept':'application/json'
+            },
+          }).then(function(response){
+            user_type = response.data["type"]
+            console.log(user_type);
+            if(user_type){
+              localStorage.setItem('token', token)
+              console.log("true");
+            }
+            else{
+              alert("You are not admin !")
+              location.reload();
+            }
+          })
+
+            
+            // console.log(response.data.access_token);
+            // console.log("successfull");
+            //window.location = "addItem.html";
           }
         ) 
+      }
       });
 
     //   // DOM AddItem

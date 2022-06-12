@@ -78,9 +78,12 @@ class UserController extends Controller
         if (!$token = auth()->attempt($validator->validated())) {
             return response()->json(['error' => 'Unauthorized'], 401);
         }
-
         return $this->respondWithToken($token);
     }
+    // public function getId(){
+    //     $user_id = Auth::user()->id;
+    //     return ($user_id);
+    // }
 
     /**
      * Logout user

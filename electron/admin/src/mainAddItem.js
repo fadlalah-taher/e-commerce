@@ -13,14 +13,12 @@ const createWindow = () => {
     width: 800,
     height: 600,
     webPreferences: {
-      preload: path.join(__dirname, 'preload.js')
-      //preload: path.join(__dirname, 'addItem.js')
+      preload: path.join(__dirname, 'addItem.js')
     }
   });
 
   // and load the index.html of the app.
-  mainWindow.loadFile(path.join(__dirname, 'index.html'));
-  //mainWindow.loadFile(path.join(__dirname, 'addItem.html'));
+  mainWindow.loadFile(path.join(__dirname, 'addItem.html'));
 
   // // Open the DevTools.
   mainWindow.webContents.openDevTools();
@@ -41,7 +39,3 @@ app.on('activate', () => {
     createWindow();
   }
 });
-
-
-
-

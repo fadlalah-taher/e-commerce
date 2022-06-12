@@ -90,6 +90,13 @@ form input:focus{
   margin-bottom: 5%;
 
 }
+header > a i{
+  position: absolute;
+  margin-top: 2%;
+  margin-left: 2%;
+  font-size: 35px;
+  color: rgb(230, 83, 98);
+}
 .input-login .input-field {
   width: 100%;
   padding: 10px;

@@ -33,42 +33,35 @@ loginBtn.addEventListener("click", function(){
         data: data,
     })
     .then(function (response) {
-
-        var token = response.data["access_token"];
-        localStorage.setItem("access_token", token);
-          axios({
-          method: 'post',
-          url: 'http://127.0.0.1:8000/api/v1/user/profile',
-          headers: {
-            'Authorization': `Bearer ${token}`,
-            'Accept':'application/json'
-          },
-        })
-        .then(function(response){
-          user_id = response.data["id"]
-          console.log(user_id);
-          if(user_id){
-            localStorage.setItem('token', user_id)
-            window.location = "file:///C:/Users/Fadel/e-commerce/e-commerce-backend/e-commerce-frontend/index.html";
-          }
-          else{
-            invalidEmail.style.display="block";
-          }
-        })
-      // console.log(response.data);
-      // console.log(response.data.access_token);
+       var token = response.data["access_token"];
+      localStorage.setItem("access_token", token);
+      axios({
+      method: 'post',
+      url: 'http://127.0.0.1:8000/api/v1/user/profile',
+      headers: {
+        'Authorization': `Bearer ${token}`,
+        'Accept':'application/json'
+      },
+    })
+    .then(function(response){
+      user_id = response.data["id"]
+      console.log(user_id);
+      if(user_id){
+        localStorage.setItem('token', user_id)
+        window.location = "file:///C:/Users/Fadel/e-commerce/e-commerce-backend/e-commerce-frontend/index.html";
+      }
+      else{
+        invalidEmail.style.display="block";
+      }
+    })
       //window.localStorage.setItem("user_id", response.data.id);
-      //window.location = "file:///C:/Users/Fadel/e-commerce/e-commerce-backend/e-commerce-frontend/index.html";
     }
     ) 
   })
 
-
-
 /* register */
 var createBtn = document.getElementById("createBtn");
 var registerForm = document.getElementById("createAcount");
-
 
 createBtn.addEventListener("click", function(){
 
@@ -95,7 +88,6 @@ createBtn.addEventListener("click", function(){
 
 signBtn.addEventListener("click", function(){
     popup.style.display = "flex";
-    console.log("Hello flex");
 });
 
 window.onclick = function(event) {

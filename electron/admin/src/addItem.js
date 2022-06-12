@@ -1,6 +1,3 @@
-
-// const axios = require('axios').default;
-
 window.addEventListener('DOMContentLoaded', () => {
     // DOM AddItem
     var addItemForm = document.getElementById("createItem");
@@ -18,11 +15,11 @@ window.addEventListener('DOMContentLoaded', () => {
             method: 'post',
             url: 'http://127.0.0.1:8000/api/v1/user/logout',
             headers: {
-              'Authorization': `Bearer ${token}`,
+              'Authorization': `Bearer ${localStorage.getItem('access_token')}`,
               'Accept':'application/json'
             },
           })
-          location.reload()
+          location.href = "index.html";
     })
 
     // Add Item
@@ -58,7 +55,6 @@ window.addEventListener('DOMContentLoaded', () => {
                     else{
                     console.log(response);
                     location.reload();
-                    //window.location = "file:///C:/Users/Fadel/e-commerce/e-commerce-backend/e-commerce-frontend/login.html#";
                     }
                 })
             }

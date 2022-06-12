@@ -3,6 +3,7 @@ var signBtn = document.getElementById("signBtn");
 var loginBtn = document.getElementById("loginBtn");
 //var logoutBtn = document.getElementById("logoutBtn");
 
+var invalidPE = document.getElementById("invalidEmail");
 // hide password icons
 var hide1 = document.getElementById("hide1");
 var hide2 = document.getElementById("hide2");
@@ -48,7 +49,7 @@ loginBtn.addEventListener("click", function(){
             window.location = "file:///C:/Users/Fadel/e-commerce/e-commerce-backend/e-commerce-frontend/index.html";
           }
           else{
-            alert("there is no id !")
+            invalidEmail.style.display="block";
           }
         })
       // console.log(response.data);
@@ -57,7 +58,7 @@ loginBtn.addEventListener("click", function(){
       //window.location = "file:///C:/Users/Fadel/e-commerce/e-commerce-backend/e-commerce-frontend/index.html";
     }
     ) 
-  });
+  })
 
 
 

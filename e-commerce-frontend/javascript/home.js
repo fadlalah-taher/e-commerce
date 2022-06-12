@@ -1,6 +1,8 @@
+//DOM
 var myNav = document.getElementById("myNav");
 var icon = document.getElementById("span-icon");
 var itemContainer = document.getElementById("item-container");
+var logoutBtn = document.getElementById("logoutBtn");
 
 icon.addEventListener("click", function(){
     myNav.style.width = "100%";
@@ -44,4 +46,17 @@ window.onload = (function(){
         console.log(response);
         }
     )
+})
+
+ // Logout
+ logoutBtn.addEventListener("click", function(){
+    axios({
+        method: 'post',
+        url: 'http://127.0.0.1:8000/api/v1/user/logout',
+        headers: {
+          'Authorization': `Bearer ${token}`,
+          'Accept':'application/json'
+        },
+      })
+      window.location = "file:///C:/Users/Fadel/e-commerce/e-commerce-backend/e-commerce-frontend/index.html";
 })

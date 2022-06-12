@@ -164,19 +164,6 @@ body{
     font-size: 40px;
     line-height: 24px;
   }
-  .latest-product .right {
-    padding: 10px;
-    flex: 30%;
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
-  }
-  .latest-product .right p {
-    cursor: pointer;
-  }
-  .latest-product .right p:hover {
-    color: #ff003c;
-  }
   .latest-product .latest-product-card {
     margin-top: 50px;
     display: flex;
@@ -380,7 +367,9 @@ body{
 
 /* logout */
 #logoutBtn{
-  display: none;
+  /* display: none; */
+  margin-left: 20px;
+  background-color: #c18787;
 }
 
 

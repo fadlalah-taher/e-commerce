@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Models\Item;
 
@@ -41,6 +42,14 @@ class ItemController extends Controller
         return response()->json([
             "status" => "Success",
             "message" => $item
+        ], 200);
+    }
+
+    public function getCategories(){
+        $categories = Category::all();
+        return response()->json([
+            "success" => true,
+            "items" => $categories
         ], 200);
     }
     

@@ -30,6 +30,10 @@ Route::group(['prefix' => 'v1'], function(){
         Route::get('/item/{id}', [ItemController::class, 'getItemById']);
         Route::post('/additem', [ItemController::class, 'addItem']);
     });
+
+    Route::group(['prefix' => 'category'], function(){
+        Route::get('/getCategories', [ItemController::class, 'getCategories']);
+    });
    
 });
 

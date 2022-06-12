@@ -11,12 +11,13 @@ myNav.addEventListener("click", function(){
 
 
 window.onload = (function(){
+    var id_logged = localStorage.getItem("token");
+    console.log(id_logged);
     axios({
         method: 'get',
         url: 'http://127.0.0.1:8000/api/v1/item/allitems',
     })
     .then(function (response) {
-        console.log("hi");
         console.log(response);
         let items = response.data['items'];
         console.log(items);

@@ -42,9 +42,9 @@ loginBtn.addEventListener("click", function(){
           },
         }).then(function(response){
           user_id = response.data["id"]
-          console.log(user_type);
+          console.log(user_id);
           if(user_id){
-            localStorage.setItem('token', token)
+            localStorage.setItem('token', user_id)
             window.location = "file:///C:/Users/Fadel/e-commerce/e-commerce-backend/e-commerce-frontend/index.html";
           }
           else{

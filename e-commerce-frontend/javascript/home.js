@@ -14,14 +14,6 @@ myNav.addEventListener("click", function(){
 
 
 window.onload = (function(){
-    // var id_logged = localStorage.getItem("token");
-    // console.log(id_logged);
-    // if(id_logged == ""){
-    //     console.log("true not logged in");
-    // }else{
-    //     logoutBtn.style.display = "block";
-    //     loginBtn.style.display = "none";
-    // }
     axios({
         method: 'get',
         url: 'http://127.0.0.1:8000/api/v1/item/allitems',

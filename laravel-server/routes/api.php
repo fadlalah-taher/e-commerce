@@ -36,8 +36,8 @@ Route::group(['prefix' => 'v1'], function(){
     });
 
     Route::group(['prefix' => 'favorite'], function(){
-        Route::get('/setFavorite', [ItemController::class, 'setFavorite']);
-        //Route::get('/addCategory', [ItemController::class, 'addCategory']);
+        Route::post('/setFavorite', [ItemController::class, 'setFavorite']);
+        Route::post('/removeFavorite', [ItemController::class, 'removeFavorite']);
     });
    
 });

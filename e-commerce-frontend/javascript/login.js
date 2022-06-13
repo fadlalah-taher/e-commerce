@@ -11,12 +11,15 @@ var hide4 = document.getElementById("hide4");
 var passwordLoginIcon = document.getElementById("password-icon");
 var passwordRegisterIcon = document.getElementById("passwordRegister-icon");
 var loginInputPassword = document.getElementById("login-inputPassword");
-var registerInputPassword = document.getElementById("inputPassword-register");
 var popup = document.querySelector(".popup");
 
 /* register */
 var createBtn = document.getElementById("createBtn");
 var registerForm = document.getElementById("createAcount");
+var emailRegister = document.getElementById("email");
+var registerInputPassword = document.getElementById("inputPassword-register");
+var fullnameRegister = document.getElementById("full_name");
+var changeEmail = document.getElementById("changeEmail");
 
 
 // email and register popup message
@@ -61,7 +64,6 @@ loginBtn.addEventListener("click", function(){
         invalidEmail.style.display="block";
       }
     })
-      //window.localStorage.setItem("user_id", response.data.id);
     }).catch(function(response){
       invalidPE.style.display = "block";
     })
@@ -70,22 +72,29 @@ loginBtn.addEventListener("click", function(){
 
 
 createBtn.addEventListener("click", function(){
-
-let data = new FormData(registerForm);
-axios({
-    method: 'post',
-    url: 'http://127.0.0.1:8000/api/v1/user/register',
-    data: data,
-})
-.then(function (response) {
-  if(response.data == "mess around"){
+  if(emailRegister.value == "" || registerInputPassword.value == "" || fullnameRegister.value == ""){
     createdAccount.style.display = "block";
   }
   else{
-    console.log(response);
-    window.location = "file:///C:/Users/Fadel/e-commerce/e-commerce-backend/e-commerce-frontend/login.html";
+    createdAccount.style.display = "none";
+    let data = new FormData(registerForm);
+    axios({
+      method: 'post',
+      url: 'http://127.0.0.1:8000/api/v1/user/register',
+      data: data,
+    })
+    .then(function (response) {
+      if(response.data == "mess around"){
+        createdAccount.style.display = "block";
+      }
+      else{
+        console.log(response);
+        window.location = "file:///C:/Users/Fadel/e-commerce/e-commerce-backend/e-commerce-frontend/pages/login.html";
+      }
+    }).catch(function(response){
+      changeEmail.style.display = "block";
+    })
   }
-})
 });
 
 

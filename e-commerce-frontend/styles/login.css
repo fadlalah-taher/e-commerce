@@ -137,6 +137,9 @@ form input:focus{
 #createdAccount{
     display: none;
 }
+#changeEmail{
+    display: none;
+}
 .signBtn{
     background-color: rgb(230, 83, 98);
     padding: 15px;

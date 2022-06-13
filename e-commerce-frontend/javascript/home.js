@@ -20,7 +20,6 @@ window.onload = (function(){
     })
     .then(function (response) {
         let items = response.data['items'];
-        console.log(items);
         itemContainer.innerHTML = ""; 
         items.forEach(item => {
             let userHtml = `
@@ -41,7 +40,6 @@ window.onload = (function(){
           </div>`;
           itemContainer.innerHTML +=userHtml;
         })
-        console.log(response);
         }
     )
 })

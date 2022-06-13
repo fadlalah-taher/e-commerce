@@ -6,7 +6,7 @@ body{
     overflow-x: hidden;
 }
 
-/*-------------------- main header section start----------------- */
+/*--------------------header section ------------------ */
 .main-header-section {
     display: flex;
     justify-content: space-between;
@@ -91,7 +91,7 @@ body{
   border-radius: 50%;
 }
 
-/*-------------------- Hero section start----------------- */
+/*-------------------- Hero section----------------- */
 .hero-section {
     margin-bottom: 150px;
     background-color: #c7ecff;
@@ -367,7 +367,6 @@ body{
 
 /* logout */
 #logoutBtn{
-  /* display: none; */
   margin-left: 20px;
   background-color: #b83232;
 }
@@ -376,7 +375,7 @@ body{
   /* Media Query*/
 @media (max-width: 969px) {
 
-  /*-------------------- main header section start----------------- */
+  /*--------------------header section----------------- */
   .main-header-section .center {
     width: 50%;
     gap:10px;
@@ -389,7 +388,7 @@ body{
   .main-header-section .center a:hover {
     color: #ff003c;
   }
-    /* burger menu*/
+  /*-----------------burger menu------------------*/
   .overlay a {font-size: 40px}
   .overlay .closebtn {
     font-size: 40px;
@@ -430,13 +429,13 @@ body{
     justify-content: center;
     align-items: center;
   }
-  /* Policy section*/
+  /*-----------------Policy section-----------------*/
   .policy .row {
       flex-direction: column;
       gap:20px;
     }
 
-  /* footer section */
+  /*---------------footer section-------------------*/
   .footer-section .row {
       flex-direction: column;
       gap: 25px;

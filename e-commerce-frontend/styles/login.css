@@ -11,7 +11,6 @@ header{
     height: 100vh;
     overflow: hidden;
     background-color: #c7ecff;
-    /* background:url("https://images.squarespace-cdn.com/content/v1/54be6dbbe4b0ab9f360b79fa/1624736915285-EA9GFFLL1XASOK15R0R6/KOP01257.jpg?format=2500w")no-repeat center center/cover; */
 }
 header section{
     position: relative;
@@ -26,7 +25,6 @@ section .header-container{
     width: 80%;
     height: 97.5%;
     display: flex;
-    /*flex-direction: column;*/ 
     align-items: center;
     justify-content: space-around;
 }
@@ -44,8 +42,8 @@ header section .header-container h1{
     letter-spacing: 2px;
     margin-top: 30px;
 }
-/* Form Login */
 
+/* Form Login */
 .right-container{
     display: flex;
     flex-direction: column;

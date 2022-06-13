@@ -13,7 +13,7 @@ var passwordRegisterIcon = document.getElementById("passwordRegister-icon");
 var loginInputPassword = document.getElementById("login-inputPassword");
 var popup = document.querySelector(".popup");
 
-/* register */
+// register 
 var createBtn = document.getElementById("createBtn");
 var registerForm = document.getElementById("createAcount");
 var emailRegister = document.getElementById("email");

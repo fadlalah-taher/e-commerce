@@ -64,8 +64,8 @@ class User extends Authenticatable implements JWTSubject
         'email_verified_at' => 'datetime',
     ];
 
-    // public function favortes()
-    // {
-    //     return $this->hasMany(Favorte::class);
-    // }
+    public function favortes()
+    {
+        return $this->hasMany(Favorte::class);
+    }
 }

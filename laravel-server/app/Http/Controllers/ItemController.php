@@ -20,8 +20,7 @@ class ItemController extends Controller
         ], 200);
     }
 
-    public function getItemById($id){//Request $request, 
-        //$id = $request->id;
+    public function getItemById($id){
         $item = Item::find($id);
        
         return response()->json([
@@ -46,7 +45,7 @@ class ItemController extends Controller
     }
 
     // Category
-    
+
     public function getCategories(){
         $categories = Category::all();
         return response()->json([

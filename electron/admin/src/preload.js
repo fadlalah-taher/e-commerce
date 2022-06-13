@@ -6,6 +6,7 @@ window.addEventListener('DOMContentLoaded', () => {
   var loginInputPassword = document.getElementById("login-inputPassword");
   var loginBtn = document.getElementById("loginBtn");
   var emailInput = document.getElementById("emailInput");
+  var invalidEmail = document.getElementById("invalidEmail");
 
   // hide/unhide password icons DOM
   var hide1 = document.getElementById("hide1");
@@ -14,9 +15,10 @@ window.addEventListener('DOMContentLoaded', () => {
 
   loginBtn.addEventListener("click", function(){
     if(emailInput.value == "" || loginInputPassword.value == ""){
-      alert("Fill all Fields");
+      invalidEmail.style.display = "block";
     }
     else{
+      invalidEmail.style.display = "none";
       let data = new FormData();
       data.append('email', emailInput.value);
       data.append('password', loginInputPassword.value);

@@ -45,14 +45,7 @@ window.onload = (function(){
         }
     )
 })
- var id_logged = localStorage.getItem("token");
-    console.log(id_logged);
-    if(id_logged == ""){
-        console.log("true not logged in");
-    }else{
-        // logoutBtn.style.display = "block";
-        // loginBtn.style.display = "none";
-    }
+
 
  // Logout
  logoutBtn.addEventListener("click", function(){
@@ -69,6 +62,7 @@ window.onload = (function(){
         localStorage.setItem('access_token',null);
         loginBtn.style.display = "block";
         logoutBtn.style.display = "none";
+      }).catch(function(response){
+        alert("You are not logged in!")
       })
-      //window.location = "file:///C:/Users/Fadel/e-commerce/e-commerce-backend/e-commerce-frontend/index.html";
 })

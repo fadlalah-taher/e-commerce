@@ -8,6 +8,7 @@ window.addEventListener('DOMContentLoaded', () => {
     var imageInput = document.getElementById("imageInput");
     var catSelect = document.getElementById("cat-select");
     var logoutBtn = document.getElementById("logout");
+    var fillField = document.getElementById("fillFields");
 
     // Logout
     logoutBtn.addEventListener("click", function(){
@@ -25,7 +26,7 @@ window.addEventListener('DOMContentLoaded', () => {
     // Add Item
     addBtn.addEventListener("click", async function(){
         if(nameInput.value == "" || descriptionInput.value == "" || priceInput.value == "" || imageInput.value == ""){
-            alert("fill all");
+            fillField.style.display = "block";
         }
         else{
             var base64String = "";

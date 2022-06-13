@@ -34,6 +34,11 @@ Route::group(['prefix' => 'v1'], function(){
         Route::get('/getCategories', [ItemController::class, 'getCategories']);
         Route::get('/addCategory', [ItemController::class, 'addCategory']);
     });
+
+    Route::group(['prefix' => 'favorite'], function(){
+        Route::get('/setFavorite', [ItemController::class, 'setFavorite']);
+        //Route::get('/addCategory', [ItemController::class, 'addCategory']);
+    });
    
 });
 

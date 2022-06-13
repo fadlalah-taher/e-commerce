@@ -45,6 +45,8 @@ class ItemController extends Controller
         ], 200);
     }
 
+    // Category
+    
     public function getCategories(){
         $categories = Category::all();
         return response()->json([
@@ -53,13 +55,15 @@ class ItemController extends Controller
         ], 200);
     }
 
-    // public function getitemsbycat(){
-    //     //$items = Item::table('Categories')->where('id',1);
-    //     $items = Category::table('categories')->where('id', '1')->first();
-    //     return response()->json([
-    //         "success" => true,
-    //         "items" => $items
-    //     ], 200);
-    // }
+    public function addCategory(Request $request){
+        
+        $category = new Category;
+        $category->name = $request->name;
+        $category->save();
+
+        return response()->json([
+            "success" => true,
+        ], 200);
+    }
     
 }

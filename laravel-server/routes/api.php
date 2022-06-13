@@ -32,7 +32,7 @@ Route::group(['prefix' => 'v1'], function(){
 
     Route::group(['prefix' => 'category'], function(){
         Route::get('/getCategories', [ItemController::class, 'getCategories']);
-        // Route::get('/getitemsbycat', [ItemController::class, 'getitemsbycat']);
+        Route::get('/addCategory', [ItemController::class, 'addCategory']);
     });
    
 });

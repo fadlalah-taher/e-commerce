@@ -43,7 +43,7 @@ loginBtn.addEventListener("click", function(){
         data: data,
     })
     .then(function (response) {
-        var token = response.data["access_token"];
+      var token = response.data["access_token"];
       localStorage.setItem("access_token", token);
       axios({
       method: 'post',
@@ -55,9 +55,9 @@ loginBtn.addEventListener("click", function(){
     })
     .then(function(response){
       user_id = response.data["id"]
-      console.log(user_id);
+      // console.log(user_id);
       if(user_id){
-        localStorage.setItem('token', user_id)
+        localStorage.setItem('token', user_id);
         window.location = "file:///C:/Users/Fadel/e-commerce/e-commerce-backend/e-commerce-frontend/index.html";
       }
       else{
@@ -105,7 +105,7 @@ signBtn.addEventListener("click", function(){
 });
 
 window.onclick = function(event) {
-console.log(event.target);
+// console.log(event.target);
   if (event.target == registerSection) {
     popup.style.display = "none";
   }

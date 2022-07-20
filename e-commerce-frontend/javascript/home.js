@@ -38,8 +38,8 @@ window.onload = (function(){
                 <p>
                 ${item.price}
                 </p>
-                <button id="item_${item['id']}" class="fav-btn" ${fav_pre}>❤</button>
-                <a><i class="fa-solid fa-heart"></i></a>
+                <button id="item_${item['id']}" class="fav-btn" ${fav_pre}><a><i class="fa-solid fa-heart"></i></a></button>
+                
               </div>
             </div>
           </div>`;
@@ -48,16 +48,13 @@ window.onload = (function(){
         var fav_btns = document.getElementsByClassName("fav-btn");
         console.log('hello');
         for (const element of fav_btns) {
-        //   console.log('hello');
             let eid = element.id.split('_')[1]
             eid = parseInt(eid)
             console.log(eid);
 
             // add event listener for each fav button
             element.addEventListener("click", async function () {
-                console.log("hi");
                 let token = localStorage.getItem("access_token");
-                    console.log(token);
                 let fav_data = new FormData()
                 fav_data.append('user_id', user_id)
                 fav_data.append('item_id', eid)

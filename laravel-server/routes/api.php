@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ItemController;
-
+use App\Http\Controllers\FavoriteController;
 
 
 Route::group(['prefix' => 'v1'], function(){
@@ -17,6 +17,8 @@ Route::group(['prefix' => 'v1'], function(){
             Route::post('/logout', [UserController::class, 'logout'])->name('logout');
             Route::post('/refresh', [UserController::class, 'refresh'])->name('refresh');
             Route::post('/profile', [UserController::class, 'profile'])->name('profile');
+
+            Route::post('/setfavorite', [FavoriteController::class, 'setFavorite'])->middleware('auth');
         });
     });
 
@@ -36,8 +38,7 @@ Route::group(['prefix' => 'v1'], function(){
     });
 
     Route::group(['prefix' => 'favorite'], function(){
-        Route::post('/setFavorite', [ItemController::class, 'setFavorite']);
-        Route::post('/removeFavorite', [ItemController::class, 'removeFavorite']);
+        Route::post('/removefavorite', [FavoriteController::class, 'removeFavorite']);
     });
    
 });

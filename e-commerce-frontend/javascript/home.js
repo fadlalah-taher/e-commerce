@@ -14,11 +14,14 @@ myNav.addEventListener("click", function(){
 
 
 window.onload = (function(){
+    var fav_ids = [];
     axios({
         method: 'get',
         url: 'http://127.0.0.1:8000/api/v1/item/allitems',
     })
     .then(function (response) {
+        user_id = localStorage.getItem('token');
+        console.log(user_id);
         let items = response.data['items'];
         itemContainer.innerHTML = ""; 
         var fav_pre = ``
@@ -42,78 +45,155 @@ window.onload = (function(){
           </div>`;
           itemContainer.innerHTML +=userHtml;
         })
+        var fav_btns = document.getElementsByClassName("fav-btn");
+        console.log('hello');
+        for (const element of fav_btns) {
+        //   console.log('hello');
+            let eid = element.id.split('_')[1]
+            eid = parseInt(eid)
+            console.log(eid);
+
+            // add event listener for each fav button
+            element.addEventListener("click", async function () {
+                console.log("hi");
+                let token = localStorage.getItem("access_token");
+                    console.log(token);
+                let fav_data = new FormData()
+                fav_data.append('user_id', user_id)
+                fav_data.append('item_id', eid)
+                console.log("append");
+                // console.log(eid)
+                if (fav_ids.includes(eid)) {
+
+                    // removing from favs
+                    await axios({
+                        method: 'post',
+                        url: 'http://127.0.0.1:8000/api/v1/favorite/removefavorite',
+                        headers: {
+                            'Authorization': `Bearer ${token}`,
+                            'Accept': 'application/json'
+                        },
+                        data: fav_data
+                    }).then(function (response) {
+                        // remove the item from the favorited items list
+                        console.log("axiox");
+                        if (response.data['success']) {
+                            element.style.color = "black"
+                            // console.log('removed')
+
+                            fav_ids = fav_ids.filter(function (x) {
+                                return x !== eid;
+                            });
+                            // console.log(fav_ids);
+                        }
+                    })
+
+                } else {
+                    
+                    // set item as favorite
+                    await axios({
+                        method: 'post',
+                        url: 'http://127.0.0.1:8000/api/v1/user/setfavorite',
+                        headers: {
+                            'Authorization': `Bearer ${token}`,
+                            'Accept': 'application/json'
+                        },
+                        data: fav_data
+                    }).then(function (response) {
+                        console.log(response);
+                        // append the item to the favorited items list
+                        console.log("added");
+                        if (response.data['success']) {
+                            element.style.color = "red"
+                            fav_ids.push(eid)
+                            // console.log('pushed')
+
+                        }
+
+                    }).catch(function (err) {
+                        // this happens when trying to favorite without being logged in
+                        if (err.response['statusText'] == 'Unauthorized') {
+                            alert("Login first")
+                        }
+                    })
+                }
+
+            })
+        }
+
         }
     )
     /////////////////////////
-    var fav_btns = document.getElementsByClassName("fav-btn");
-console.log('hello');
-            for (const element of fav_btns) {
-              console.log('hello');
-                let eid = element.id.split('_')[1]
-                eid = parseInt(eid)
+        // var fav_btns = document.getElementsByClassName("fav-btn");
+        // console.log('hello');
+        // for (const element of fav_btns) {
+        // //   console.log('hello');
+        //     let eid = element.id.split('_')[1]
+        //     eid = parseInt(eid)
 
-                // add event listener for each fav button
-                element.addEventListener("click", async function () {
-                    let fav_data = new FormData()
-                    fav_data.append('user_id', user_id)
-                    fav_data.append('item_id', eid)
-                    console.log("append");
-                    // console.log(eid)
-                    if (fav_ids.includes(eid)) {
+        //     // add event listener for each fav button
+        //     element.addEventListener("click", async function () {
+        //         console.log("hi");
+        //         let fav_data = new FormData()
+        //         fav_data.append('user_id', user_id)
+        //         fav_data.append('item_id', eid)
+        //         console.log("append");
+        //         console.log(eid)
+        //         if (fav_ids.includes(eid)) {
 
-                        // removing from favs
-                        await axios({
-                            method: 'post',
-                            url: 'http://127.0.0.1:8000/api/v1/favorite/removefavorite',
-                            headers: {
-                                'Authorization': `Bearer ${token}`,
-                                'Accept': 'application/json'
-                            },
-                            data: fav_data
-                        }).then(function (response) {
-                            // remove the item from the favorited items list
-                            console.log("axiox");
-                            if (response.data['success']) {
-                                element.style.color = "black"
-                                // console.log('removed')
+        //             // removing from favs
+        //             await axios({
+        //                 method: 'post',
+        //                 url: 'http://127.0.0.1:8000/api/v1/favorite/removefavorite',
+        //                 headers: {
+        //                     'Authorization': `Bearer ${token}`,
+        //                     'Accept': 'application/json'
+        //                 },
+        //                 data: fav_data
+        //             }).then(function (response) {
+        //                 // remove the item from the favorited items list
+        //                 console.log("axiox");
+        //                 if (response.data['success']) {
+        //                     element.style.color = "black"
+        //                     // console.log('removed')
 
-                                fav_ids = fav_ids.filter(function (x) {
-                                    return x !== eid;
-                                });
-                                // console.log(fav_ids);
-                            }
-                        })
+        //                     fav_ids = fav_ids.filter(function (x) {
+        //                         return x !== eid;
+        //                     });
+        //                     // console.log(fav_ids);
+        //                 }
+        //             })
 
-                    } else {
-                        // set item as favorite
-                        await axios({
-                            method: 'post',
-                            url: 'http://127.0.0.1:8000/api/v1/favorite/setfavorite',
-                            headers: {
-                                'Authorization': `Bearer ${token}`,
-                                'Accept': 'application/json'
-                            },
-                            data: fav_data
-                        }).then(function (response) {
-                            // append the item to the favorited items list
-                            console.log("added");
-                            if (response.data['success']) {
-                                element.style.color = "red"
-                                fav_ids.push(eid)
-                                // console.log('pushed')
+        //         } else {
+        //             // set item as favorite
+        //             await axios({
+        //                 method: 'post',
+        //                 url: 'http://127.0.0.1:8000/api/v1/favorite/setfavorite',
+        //                 headers: {
+        //                     'Authorization': `Bearer ${token}`,
+        //                     'Accept': 'application/json'
+        //                 },
+        //                 data: fav_data
+        //             }).then(function (response) {
+        //                 // append the item to the favorited items list
+        //                 console.log("added");
+        //                 if (response.data['success']) {
+        //                     element.style.color = "red"
+        //                     fav_ids.push(eid)
+        //                     // console.log('pushed')
 
-                            }
+        //                 }
 
-                        }).catch(function (err) {
-                            // this happens when trying to favorite without being logged in
-                            if (err.response['statusText'] == 'Unauthorized') {
-                                alert("Login first")
-                            }
-                        })
-                    }
+        //             }).catch(function (err) {
+        //                 // this happens when trying to favorite without being logged in
+        //                 if (err.response['statusText'] == 'Unauthorized') {
+        //                     alert("Login first")
+        //                 }
+        //             })
+        //         }
 
-                })
-            }
+        //     })
+        // }
 
 })
 ////////////////////////////

@@ -178,6 +178,7 @@ body{
   .card img {
     width: 100%;
     border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgb(0, 0, 0, 0.3);
   }
   .card {
     transition: 0.3s;
@@ -428,11 +429,10 @@ body{
     margin-left: 40%;
     background-color: white;
   }
-  .latest-product-card{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  .latest-product .latest-product-card .column {
+    flex: 50%;
+    max-width: 45%;
+    margin: 15px 0px;
   }
   /*-----------------Policy section-----------------*/
   .policy .row {
@@ -454,3 +454,4 @@ body{
   }
    
 }
+

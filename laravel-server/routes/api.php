@@ -39,6 +39,7 @@ Route::group(['prefix' => 'v1'], function(){
 
     Route::group(['prefix' => 'favorite'], function(){
         Route::post('/removefavorite', [FavoriteController::class, 'removeFavorite']);
+        Route::get('/getfavoritesById', [FavoriteController::class, 'getFavoritesById']);
     });
    
 });

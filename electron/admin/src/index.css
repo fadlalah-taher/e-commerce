@@ -151,10 +151,18 @@ header > a i{
   margin-top: -3%;
   display: none;
 }
-#cat-select{
-  height: 50px;
-  font-size: 20px;
-}
 #fillFields{
   display: none;
+}
+.select-cat{
+  width: 100%;
+  padding: 10px;
+  padding-left: 50px;
+  color: gray;
+  border: 1px solid rgb(218, 214, 214);
+  border-radius: 5px;
+}
+.select-cat:focus{
+  border-color: #2577fd;
+  box-shadow: 0 0 8px #2577fd;
 }

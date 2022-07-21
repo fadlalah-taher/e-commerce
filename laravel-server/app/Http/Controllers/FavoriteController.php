@@ -30,7 +30,10 @@ class FavoriteController extends Controller
     }
 
     public function getFavoritesById(Request $request){
-        $favortes = Favorite::all()->where('user_id',$request->user_id);
+        $favortes = Favorite::select('items.id','items.name','items.description','items.price','items.image','items.category_id','favorites.user_id')
+        ->join('items','favorites.item_id','=','items.id')
+        ->where('favorites.user_id',$request->user_id)
+        ->get();
        
         return response()->json([
             "success" => true,

@@ -15,12 +15,11 @@ window.onload = (function(){
     console.log(user_id);
     axios({
         method: 'get',
-        // url: 'http://127.0.0.1:8000/api/v1/favorite/getfavoritesById?user_id='+ user_id,
-        url: 'http://127.0.0.1:8000/api/v1/item/allitems',
+        url: 'http://127.0.0.1:8000/api/v1/favorite/getfavoritesById?user_id='+ user_id,
     })
     .then(function (response) {
       console.log(response);
-        let items = response.data['items'];
+        let items = response.data['item'];
         console.log(items);
         favortesContainer.innerHTML = ""; 
         items.forEach(item => {

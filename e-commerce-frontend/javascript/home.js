@@ -71,12 +71,10 @@ window.onload = (function(){
                         // remove the item from the favorited items list
                         if (response.data['success']) {
                             element.style.color = "black"
-                            // console.log('removed')
 
                             fav_ids = fav_ids.filter(function (x) {
                                 return x !== eid;
                             });
-                            // console.log(fav_ids);
                         }
                     })
 
@@ -92,14 +90,10 @@ window.onload = (function(){
                         },
                         data: fav_data
                     }).then(function (response) {
-                        // console.log(response);
                         // append the item to the favorited items list
-                        // console.log("added");
                         if (response.data['success']) {
                             element.style.color = "red"
                             fav_ids.push(eid)
-                            // console.log('pushed')
-
                         }
 
                     }).catch(function (err) {
@@ -126,7 +120,6 @@ window.onload = (function(){
         },
       })
       .then(function(response){
-        console.log("logout");
         localStorage.setItem('access_token',null);
         loginBtn.style.display = "block";
         logoutBtn.style.display = "none";
